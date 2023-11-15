@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Order 
+{% endblock title %}
+
+{% block body %}
+<img src="http://source.unsplash.com/1280x720/?telephone" class="d-block w-100" alt="...">
+<h2> Raksha PIzza House </h2>
+<h4>Phone - 99999 55555 </h4>
+<h4>Email - admin@rakshapizzaa.com </h4>
+<h2> Place your Order </h2>
+<div class="container mb-3 py-4">
+      <h1 class="text_center">Order Now</h1> 
+      <form method="post" action="/order">
+      {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your Phone Number">
+        </div>
+        
+        <div class="form-group">
+          <label for="desc">Describe items to be delivered along with address</label>
+          <textarea class="form-control" id="desc" row="3" name="desc"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">submit</button>
+      </form>
+
+{% endblock body %}
